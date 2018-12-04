@@ -1,0 +1,27 @@
+FROM resin/%%RESIN_MACHINE_NAME%%-python:2.7.15
+
+RUN echo "deb http://http.debian.net/debian jessie-backports main" > /etc/apt/sources.list.d/jessie-backports.list \
+    && apt-get update \
+    && apt-get install -yq --no-install-recommends \
+    openssh-server \
+    git \
+    make \
+    virtualenv \
+    && apt-get install -t jessie-backports openjdk-8-jre-headless \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+RUN mkdir /var/run/sshd \
+    && echo 'root:balena' | chpasswd \
+    && sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
+    && sed -i 's/UsePAM yes/UsePAM no/' /etc/ssh/sshd_config \
+    && echo ". <(xargs -0 bash -c 'printf \"export %q\n\" \"\$@\"' -- < /proc/1/environ)" >> /root/.profile
+
+WORKDIR /usr/src/app
+
+COPY . ./
+
+ENV INITSYSTEM on
+
+RUN ["chmod", "+x", "./start.sh"]
+
+CMD ["./start.sh"]
