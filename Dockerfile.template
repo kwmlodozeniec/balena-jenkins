@@ -4,12 +4,11 @@ RUN echo "deb http://http.debian.net/debian jessie-backports main" > /etc/apt/so
     && apt-get update \
     && apt-get install -yq --no-install-recommends \
     openssh-server \
-    git \
     make \
     virtualenv \
     python3 \
     python3-dev \
-    && apt-get install -t jessie-backports openjdk-8-jre-headless \
+    && apt-get install -t jessie-backports openjdk-8-jre-headless git \
     && pip install -U pip setuptools \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
