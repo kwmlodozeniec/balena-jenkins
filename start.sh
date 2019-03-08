@@ -5,5 +5,10 @@ if [ "$INITSYSTEM" != "on" ]; then
   /usr/sbin/sshd -p 22 &
 fi
 
-echo "Starting Jenkins agent"
-java -jar /usr/src/app/agent.jar -jnlpUrl http://$MASTER_IP:$MASTER_PORT/computer/$SLAVE_NAME/slave-agent.jnlp -secret $MASTER_SECRET -workDir $SLAVE_WORK_DIR
+if [ -z ${RUN_MASTER+x} ]; then
+    echo "Starting Jenkins agent"
+    java -jar /usr/src/app/agent.jar -jnlpUrl http://$MASTER_IP:$MASTER_PORT/computer/$SLAVE_NAME/slave-agent.jnlp -secret $MASTER_SECRET -workDir $SLAVE_WORK_DIR
+else
+    echo "Starting Jenkins master"
+    java -jar /usr/src/app/jenkins.war
+fi

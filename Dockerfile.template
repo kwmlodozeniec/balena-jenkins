@@ -26,6 +26,9 @@ RUN dpkg -i tools/JLink_Linux_V640_x86_64.deb
 
 ENV INITSYSTEM on
 
+RUN mkdir /data/jenkins
+ENV JENKINS_HOME=/data/jenkins/
+
 RUN ["chmod", "+x", "./start.sh"]
 
 CMD ["./start.sh"]
