@@ -26,9 +26,10 @@ RUN dpkg -i tools/JLink_Linux_V640_x86_64.deb
 
 ENV INITSYSTEM on
 
-RUN mkdir -p /data/jenkins
-RUN wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 ENV JENKINS_HOME=/data/jenkins/
+ENV JENKINS_VERSION=2.150.3
+RUN mkdir -p /data/jenkins
+RUN wget http://mirrors.jenkins.io/war-stable/${JENKINS_VERSION}/jenkins.war
 
 RUN ["chmod", "+x", "./start.sh"]
 
