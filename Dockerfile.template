@@ -28,8 +28,11 @@ ENV INITSYSTEM on
 
 ENV JENKINS_HOME=/data/jenkins/
 ENV JENKINS_VERSION=2.150.3
+ENV AGENT_VERSION=3.29
+
 RUN mkdir -p /data/jenkins
 RUN wget http://mirrors.jenkins.io/war-stable/${JENKINS_VERSION}/jenkins.war
+RUN wget https://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/${AGENT_VERSION}/remoting-${AGENT_VERSION}.jar -O agent.jar
 
 RUN ["chmod", "+x", "./start.sh"]
 
