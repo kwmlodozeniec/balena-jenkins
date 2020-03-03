@@ -11,5 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: sed -i 's/%%BALENA_MACHINE_NAME%%/intel-nuc/g' Dockerfile.template
+      run:
+        sed -i 's/%%BALENA_MACHINE_NAME%%/intel-nuc/g' Dockerfile.template
         docker build --file Dockerfile.template --tag balena-jenkins:$(date +%s) .
