@@ -1,0 +1,9 @@
+repoUrl: "https://github.com/kwmlodozeniec/balena-jenkins"
+applicationEnvironmentVariables:
+  - MASTER_IP: 0
+  - MASTER_PORT: 0
+  - SLAVE_WORK_DIR: 0
+  - MASTER_SECRET: 0
+  - SLAVE_NAME: 0
+  - RUN_MASTER: 0
+defaultDeviceType: "intel-nuc"
