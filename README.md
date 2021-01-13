@@ -1,4 +1,4 @@
-![Build](https://github.com/kwmlodozeniec/balena-jenkins/.github/workflows/dockerimage.yml/badge.svg)
+![GitHub Actions](https://github.com/kwmlodozeniec/balena-jenkins/workflows/Docker%20Image%20CI/badge.svg)
 
 This is a basic Jenkins image with Python 3.7 and OpenJRE 11 preinstalled.
 The device can run either as an agent or as a Jenkins master.
