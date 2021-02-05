@@ -1,9 +1,23 @@
-repoUrl: "https://github.com/kwmlodozeniec/balena-jenkins"
-applicationEnvironmentVariables:
-  - MASTER_IP: 0
-  - MASTER_PORT: 0
-  - SLAVE_WORK_DIR: 0
-  - MASTER_SECRET: 0
-  - SLAVE_NAME: 0
-  - RUN_MASTER: 0
-defaultDeviceType: "intel-nuc"
+name: "Jenkins"
+type: "sw.application"
+description: "Build a Jenkins image with Python 3.7 and OpenJRE 11 preinstalled"
+assets:
+  repository:
+    type: "blob.asset"
+    data:
+      url: "https://github.com/kwmlodozeniec/balena-jenkins"
+  logo:
+    type: "blob.asset"
+    data:
+      url: "https://raw.githubusercontent.com/kwmlodozeniec/balena-jenkins/master/logo.png"
+data:
+  applicationEnvironmentVariables:
+    - MASTER_IP: 0
+    - MASTER_PORT: 0
+    - SLAVE_WORK_DIR: 0
+    - MASTER_SECRET: 0
+    - SLAVE_NAME: 0
+    - RUN_MASTER: 0
+  defaultDeviceType: "intel-nuc"
+  supportedDeviceTypes:
+    - "intel-nuc"
