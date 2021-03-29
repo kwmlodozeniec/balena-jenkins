@@ -6,7 +6,7 @@ Click on the button below for a one click install on your Balena dashboard.
 
 [![balena deploy button](https://www.balena.io/deploy.svg)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/kwmlodozeniec/balena-jenkins)
 # 🚨 Default SSH username and password
-This image has a default user name and password configured in the Dockerile. Please ensure this has been changed prior to using this image in any setting as it will be very insecure!
+This image has a default user name and password configured in the Dockerfile. Please ensure this has been changed prior to using this image in any setting as it will be very insecure!
 
 # ℹ️ Agent Configuraton
 The following configuration variables need to be set on FLEET level:
