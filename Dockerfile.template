@@ -1,4 +1,4 @@
-FROM balenalib/%%BALENA_MACHINE_NAME%%-python:3.7-buster-run
+FROM balenalib/%%BALENA_MACHINE_NAME%%-python:3.10-buster-run
 
 # Install base packages
 RUN install_packages \
@@ -27,7 +27,7 @@ COPY . ./
 ENV UDEV=1
 
 ENV JENKINS_HOME=/data/jenkins/
-ENV JENKINS_VERSION=2.303.2
+ENV JENKINS_VERSION=2.319.3
 ENV AGENT_VERSION=4.9
 
 RUN mkdir -p /data/jenkins
