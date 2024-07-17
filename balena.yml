@@ -1,6 +1,6 @@
 name: "Jenkins"
 type: "sw.application"
-description: "Build a Jenkins image with Python 3.11 and OpenJRE 17 preinstalled"
+description: "Build a Jenkins image with Python 3.11 and OpenJDK 17 preinstalled"
 joinable: false
 assets:
   repository:
